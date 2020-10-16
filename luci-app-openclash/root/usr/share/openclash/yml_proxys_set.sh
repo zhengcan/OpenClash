@@ -119,6 +119,9 @@ set_alpn()
    if [ -z "$1" ]; then
       return
    fi
+   if [ "$1" == "{type:" ]; then
+      return
+   fi
 cat >> "$SERVER_FILE" <<-EOF
       - $1
 EOF
